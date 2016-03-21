@@ -17,3 +17,4 @@ pip install --upgrade ndg-httpsclient >> $log
 echo "### start install CLI" >> $log
 pip install vca-cli >> $log
 wget -O /temp/deploy-vapp.sh  https://orbiteraimageseastus.blob.core.windows.net/esxi/deploy-vapp.sh
+/bin/bash /temp/deploy-vapp.sh
