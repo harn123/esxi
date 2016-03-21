@@ -16,5 +16,9 @@ pip install --upgrade ndg-httpsclient >> $log
 #python get-pip.py >> $log
 echo "### start install CLI" >> $log
 pip install vca-cli >> $log
-wget -O /temp/deploy-vapp.sh  https://orbiteraimageseastus.blob.core.windows.net/esxi/deploy-vapp.sh
-/bin/bash /temp/deploy-vapp.sh
+wget -O /temp/deploy-vapp.sh  https://orbiteraimageseastus.blob.core.windows.net/esxi/deploy-vapp.sh >> $log
+/bin/bash /temp/deploy-vapp.sh >> $log
+wget -O /etc/init.d/delete-vapp.sh https://orbiteraimageseastus.blob.core.windows.net/esxi/delete-vapp.sh >> $log
+chmod a+x /etc/init.d/delete-vapp.sh >> $log
+ln -s /etc/init.d/delete-vapp.sh /etc/rc0.d/K05deletevapp
+
